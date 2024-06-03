@@ -14,6 +14,7 @@ bot.setMyCommands([
 ]);
 bot.onText(/\/start/, (msg) => {
     const chatId = msg.chat.id;
+    console.log(msg.chat.username)
     const msgText = `Hello @${msg.chat.username} 👋\nClick play button and enjoy the game! 🎮\nAuthor:@Mogharrabiyan 🧑‍💻`;
     if (msgText)
         bot.sendPhoto(chatId, "AgACAgQAAxkBAANqZl3KXT17yzjUNjUgWOFIUUmpbKcAAu2-MRs-O3BSeYaNF511avYBAAMCAAN5AAM1BA", {
