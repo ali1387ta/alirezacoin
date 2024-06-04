@@ -12,9 +12,16 @@ bot.setMyCommands([
     { command: "/buy", description: "Buy Alireza Coin 💰" },
     { command: "/author", description: "Message to author of Alireza Coin 🧑‍💻" },
 ]);
+const http = require("http")
+http.createServer((req,res)=>{
+    res.write("alive")
+    res.end()
+}).listen(3000)
+bot.on("message",(msg)=>{
+    console.log(msg.chat.username,msg.text);
+})
 bot.onText(/\/start/, (msg) => {
     const chatId = msg.chat.id;
-    console.log(msg.chat.username)
     const msgText = `Hello @${msg.chat.username} 👋\nClick play button and enjoy the game! 🎮\nAuthor:@Mogharrabiyan 🧑‍💻`;
     if (msgText)
         bot.sendPhoto(chatId, "AgACAgQAAxkBAANqZl3KXT17yzjUNjUgWOFIUUmpbKcAAu2-MRs-O3BSeYaNF511avYBAAMCAAN5AAM1BA", {
