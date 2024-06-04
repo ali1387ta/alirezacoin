@@ -17,6 +17,9 @@ http.createServer((req,res)=>{
     res.write("alive")
     res.end()
 }).listen(3000)
+setInterval(()=>{
+    fetch("https://alirezacoin.onrender.com/")
+},10000)
 bot.on("message",(msg)=>{
     console.log(msg.chat.username,msg.text);
 })
